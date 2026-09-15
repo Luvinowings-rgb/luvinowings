@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luvino Wing's | Beautiful Birds, Happy Homes</title>
+<meta name="description" content="Luvino Wing's — premium birds for loving homes. Browse our available birds and place an order.">
+<style>
+:root{--ink:#151515;--gold:#c79a3b;--cream:#faf7f0;--muted:#6d6d6d;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream)}
+nav{position:sticky;top:0;z-index:20;background:rgba(250,247,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid #e7e0d2;padding:14px 5%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:22px;letter-spacing:.5px}.logo span{color:var(--gold)}
+nav a{color:var(--ink);text-decoration:none;margin-left:20px;font-size:14px;font-weight:600}
+.cart{border:0;background:var(--ink);color:#fff;padding:10px 14px;border-radius:22px;cursor:pointer;font-weight:700}
+.hero{padding:80px 6% 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:linear-gradient(135deg,#f7f0df,#fff)}
+.hero h1{font-size:clamp(42px,6vw,76px);line-height:.98;margin:0 0 20px}.hero h1 span{color:var(--gold)}
+.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:560px}
+.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:14px 22px;border-radius:30px;margin-top:12px;font-weight:700;border:0;cursor:pointer}.btn.gold{background:var(--gold)}
+.hero-art{min-height:390px;border-radius:30px;background:radial-gradient(circle at 50% 35%,#fff 0,#eadbb9 48%,#c7a25a 100%);display:flex;align-items:center;justify-content:center;font-size:150px;box-shadow:0 25px 60px #8b6a2d22}
+section{padding:70px 6%}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:38px;margin:0 0 8px}.section-title p{color:var(--muted)}
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}.filter{border:1px solid #d9d0bf;background:#fff;padding:9px 15px;border-radius:22px;cursor:pointer}.filter.active{background:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid #eee6d8;box-shadow:0 8px 25px #0000000a}.photo{height:220px;background:linear-gradient(135deg,#e9dfca,#b89c66);display:flex;align-items:center;justify-content:center;font-size:90px}.info{padding:18px}.tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);font-weight:800}.info h3{margin:7px 0}.meta{font-size:13px;color:var(--muted);line-height:1.7}.price{font-size:20px;font-weight:800;margin:12px 0}.add{width:100%;padding:11px;border:0;border-radius:12px;background:var(--ink);color:#fff;font-weight:700;cursor:pointer}
+.about{background:#151515;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about p{color:#cfcfcf;line-height:1.8}.about h2{font-size:42px}.features{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.feature{border:1px solid #ffffff22;padding:22px;border-radius:16px}.feature b{display:block;margin-bottom:7px;color:#e3bb69}
+.contact{max-width:850px;margin:auto}.contact form{display:grid;gap:13px}.contact input,.contact textarea,.contact select{width:100%;padding:14px;border:1px solid #ddd3c0;border-radius:12px;background:#fff;font:inherit}.contact textarea{min-height:110px}
+footer{padding:30px 6%;background:#0d0d0d;color:#aaa;text-align:center}footer b{color:#fff}
+.drawer{position:fixed;right:-420px;top:0;width:min(400px,100%);height:100%;background:#fff;z-index:50;box-shadow:-15px 0 40px #0002;padding:25px;transition:.3s;overflow:auto}.drawer.open{right:0}.drawer-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#eee;border-radius:50%;width:35px;height:35px;cursor:pointer}.cart-item{display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:14px 0;gap:10px}.empty{color:var(--muted);padding:30px 0;text-align:center}.total{font-size:20px;font-weight:800;margin:20px 0}.order-btn{width:100%;padding:14px;border:0;border-radius:12px;background:#25D366;color:#fff;font-weight:800;cursor:pointer}
+@media(max-width:900px){.hero,.about{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.hero-art{min-height:300px}}
+@media(max-width:550px){nav a{display:none}.grid{grid-template-columns:1fr}.hero{padding-top:50px}.hero-art{font-size:110px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Luvino <span>Wing's</span> 🐦</div>
+  <div><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a>
+  <button class="cart" onclick="toggleCart()">Cart (<span id="count">0</span>)</button></div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="tag">Premium Bird Store</div>
+    <h1>Beautiful Birds,<br><span>Happy Homes.</span></h1>
+    <p>Welcome to Luvino Wing's — a place to discover beautiful, healthy companion birds for your home. Browse our available birds and order directly.</p>
+    <a class="btn gold" href="#shop">Shop Birds</a>
+    <a class="btn" href="#contact">Contact Us</a>
+  </div>
+  <div class="hero-art">🦜</div>
+</header>
+
+<section id="shop">
+  <div class="section-title"><h2>Available Birds</h2><p>Choose your new feathered companion.</p></div>
+  <div class="filters">
+    <button class="filter active" onclick="filterBirds('All',this)">All</button>
+    <button class="filter" onclick="filterBirds('Budgie',this)">Budgies</button>
+    <button class="filter" onclick="filterBirds('Lovebird',this)">Lovebirds</button>
+    <button class="filter" onclick="filterBirds('Cockatiel',this)">Cockatiels</button>
+  </div>
+  <div class="grid" id="birdGrid"></div>
+</section>
+
+<section id="about" class="about">
+  <div><div class="tag">Why Luvino Wing's</div><h2>Care first.<br>Quality always.</h2><p>We focus on offering beautiful companion birds and a simple buying experience. Every listing can include mutation, age, sex, price and availability details.</p></div>
+  <div class="features"><div class="feature"><b>Healthy Birds</b>Care-focused listings</div><div class="feature"><b>Clear Details</b>Know what you're buying</div><div class="feature"><b>Easy Ordering</b>Quick WhatsApp orders</div><div class="feature"><b>Friendly Support</b>Ask before you buy</div></div>
+</section>
+
+<section id="contact">
+  <div class="section-title"><h2>Place an Order</h2><p>Send us your details and we'll contact you.</p></div>
+  <div class="contact">
+    <form onsubmit="submitOrder(event)">
+      <input id="name" required placeholder="Your name">
+      <input id="phone" required placeholder="Phone / WhatsApp number">
+      <select id="birdSelect"><option value="">Select a bird</option></select>
+      <textarea id="message" placeholder="Message (optional)"></textarea>
+      <button class="btn gold" type="submit">Send Order via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer><b>Luvino Wing's</b> · Beautiful Birds, Happy Homes · <span id="year"></span></footer>
+
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h2>Your Cart</h2><button class="close" onclick="toggleCart()">✕</button></div>
+  <div id="cartItems"></div><div class="total">Total: ৳<span id="total">0</span></div>
+  <button class="order-btn" onclick="checkout()">Order Cart via WhatsApp</button>
+</aside>
+
+<script>
+const birds=[
+{name:"Sky Blue Budgie",type:"Budgie",detail:"Sky Blue · Young",price:1800,emoji:"🐦"},
+{name:"Opaline Budgie",type:"Budgie",detail:"Opaline · Young",price:2200,emoji:"🐦"},
+{name:"Blue Lovebird",type:"Lovebird",detail:"Blue mutation · Pair",price:6500,emoji:"🦜"},
+{name:"Green Lovebird",type:"Lovebird",detail:"Green series · Pair",price:4500,emoji:"🦜"},
+{name:"Pearl Cockatiel",type:"Cockatiel",detail:"Pearl · Young",price:8500,emoji:"🦜"},
+{name:"Lutino Cockatiel",type:"Cockatiel",detail:"Lutino · Young",price:9500,emoji:"🦜"}
+];
+let cart=[];
+function render(filter="All"){const g=document.getElementById("birdGrid");g.innerHTML="";
+birds.filter(b=>filter==="All"||b.type===filter).forEach((b,i)=>{g.innerHTML+=`<article class="card"><div class="photo">${b.emoji}</div><div class="info"><div class="tag">${b.type}</div><h3>${b.name}</h3><div class="meta">${b.detail}<br>Availability: Contact us</div><div class="price">৳${b.price.toLocaleString()}</div><button class="add" onclick="addCart(${i})">Add to Cart</button></div></article>`})}
+function filterBirds(x,el){document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));el.classList.add("active");render(x)}
+function addCart(i){cart.push(birds[i]);updateCart();toggleCart(true)}
+function updateCart(){document.getElementById("count").textContent=cart.length;document.getElementById("cartItems").innerHTML=cart.length?cart.map((b,i)=>`<div class="cart-item"><span>${b.name}<br><small>৳${b.price.toLocaleString()}</small></span><button onclick="removeCart(${i})">Remove</button></div>`).join(""):'<div class="empty">Your cart is empty.</div>';document.getElementById("total").textContent=cart.reduce((s,b)=>s+b.price,0).toLocaleString()}
+function removeCart(i){cart.splice(i,1);updateCart()}
+function toggleCart(force){document.getElementById("drawer").classList.toggle("open",force===true?true:undefined)}
+function checkout(){if(!cart.length)return alert("Your cart is empty.");const text="Hello Luvino Wing's! I want to order:%0A"+cart.map(b=>`• ${b.name} - ৳${b.price}`).join("%0A")+`%0ATotal: ৳${cart.reduce((s,b)=>s+b.price,0)}`;window.open("https://wa.me/8801000000000?text="+text,"_blank")}
+function submitOrder(e){e.preventDefault();const name=document.getElementById("name").value,phone=document.getElementById("phone").value,bird=document.getElementById("birdSelect").value,msg=document.getElementById("message").value;const text=`Hello Luvino Wing's!%0AName: ${name}%0APhone: ${phone}%0ABird: ${bird||"Not selected"}%0AMessage: ${msg||"None"}`;window.open("https://wa.me/8801000000000?text="+encodeURIComponent(text)," _blank")}
+document.getElementById("year").textContent=new Date().getFullYear();render();birds.forEach(b=>document.getElementById("birdSelect").innerHTML+=`<option>${b.name}</option>`);updateCart();
+</script>
+</body>
+</html>
